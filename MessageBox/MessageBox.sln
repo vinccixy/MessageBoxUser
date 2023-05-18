@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBox", "MessageBox.csproj", "{3CE3DF89-7047-4CEC-BECD-5F76E495EEFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CE3DF89-7047-4CEC-BECD-5F76E495EEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE3DF89-7047-4CEC-BECD-5F76E495EEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE3DF89-7047-4CEC-BECD-5F76E495EEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE3DF89-7047-4CEC-BECD-5F76E495EEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7FB86E7C-4C0D-425C-A6FA-289B82F5F0B6}
+	EndGlobalSection
+EndGlobal

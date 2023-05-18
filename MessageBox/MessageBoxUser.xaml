@@ -1,0 +1,67 @@
+﻿<Window x:Class="MessageBox.MessageBoxUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessageBox"
+        mc:Ignorable="d"
+        Title="MessageBoxUser" AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        Width="600"
+        Height="260"
+        WindowStyle="None"
+        Closing="Window_Closing"
+        Loaded="Window_Loaded">
+    <Viewbox>
+        <Grid  Width="600" Height="260">
+            <Border  Margin="10" Background="White"    >
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.5"/>
+                </Border.Effect>
+                <Grid Margin="20">
+                    <TextBlock x:Name="TB_Context" Margin="0,0,0,40" Text="Ensure?"  HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="48"  Foreground="Gray"/>
+                    <Button VerticalAlignment="Bottom"   Content=""  Tag="No"  Margin="-174,0,0,0" Height="64" Width="144"  Click="No_Button_Click"  Cursor="Hand"  >
+                        <Button.Template>
+                            <ControlTemplate  TargetType="{x:Type Button}">
+                                <Border Name="Border" Background="White"  BorderBrush="#cccccc"  >
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.2"/>
+                                    </Border.Effect>
+                                    <TextBlock  Name="text" Text="{Binding NoLeftTime.TotalSeconds,StringFormat='No（{0}）'}"  FontSize="24"    Foreground="Gray"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    </TextBlock>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding NoLeftTime.TotalSeconds}" Value="-1">
+                                        <Setter TargetName="text" Property="Text" Value="No"></Setter>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button VerticalAlignment="Bottom"    Content="Yes"  Tag="Yes"   Margin="174,0,0,0" Height="64" Width="144"  Click="Yes_Button_Click" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate  TargetType="{x:Type Button}">
+                                <Border Name="Border" Background="Gray"  >
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.2"/>
+                                    </Border.Effect>
+                                    <TextBlock  Name="text" Text="{Binding YesLeftTime.TotalSeconds,StringFormat='Yes（{0}）'}"  FontSize="24"    Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    </TextBlock>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding YesLeftTime.TotalSeconds}" Value="-1">
+                                        <Setter TargetName="text" Property="Text" Value="Yes"></Setter>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </Viewbox>
+</Window>
